@@ -1,0 +1,348 @@
+
+template 
+{
+    name = "template_319";
+    type = TEXTUAL;
+    width = 140;
+    maxheight = 99999;
+    columns = (1, 1);
+    gap = 1;
+    fillpolicy = EVEN;
+    filldirection = HORIZONTAL;
+    fillstartfrom = TOPLEFT;
+    margins = (0, 0, 0, 0);
+    gridxspacing = 1;
+    gridyspacing = 1;
+    version = 4;
+    created = "29.10.2004 12:02";
+    modified = "12.06.2024 18:09";
+    notes = "Converted template";
+
+    header _tmp_1
+    {
+        name = "Заголовок";
+        height = 2;
+
+        text _tmp_2
+        {
+            name = "<?xmlversion=\"1.0\"encoding=\"windows-1251\"?><?xml:stylesheettype=\"text/xsl\"href=\"KMD-06-Ведомостькомплектовочная.xsl\"?>";
+            x1 = 0;
+            y1 = 1;
+            x2 = 0;
+            y2 = 1;
+            string = "<?xml version=\"1.0\" encoding=\"WINDOWS-1251\"?>";
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 1;
+            fontratio = 1;
+            fontslant = 0;
+            fontstyle = 0;
+            angle = 0;
+            justify = LEFT;
+            pen = 0;
+            fontlinewidth = 1;
+        };
+
+        text _tmp_3
+        {
+            name = "Текст_1";
+            x1 = 0;
+            y1 = 0;
+            x2 = 0;
+            y2 = 0;
+            string = "<Assemblies>";
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 1;
+            fontratio = 1;
+            fontslant = 0;
+            fontstyle = 0;
+            angle = 0;
+            justify = LEFT;
+            pen = -1;
+        };
+    };
+
+    row _tmp_37345
+    {
+        name = "Similar_Assembly";
+        height = 5;
+        visibility = TRUE;
+        usecolumns = FALSE;
+        rule = "";
+        contenttype = "ASSEMBLY";
+        sorttype = COMBINE;
+
+        text _tmp_15
+        {
+            name = "Текст_14";
+            x1 = 2;
+            y1 = 4;
+            x2 = 2;
+            y2 = 4;
+            string = "<Assembly>";
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 1;
+            fontratio = 1;
+            fontslant = 0;
+            fontstyle = 0;
+            angle = 0;
+            justify = LEFT;
+            pen = -1;
+        };
+
+        text _tmp_16
+        {
+            name = "Текст";
+            x1 = 2;
+            y1 = 0;
+            x2 = 2;
+            y2 = 0;
+            string = "</Assembly>";
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 1;
+            fontratio = 1;
+            fontslant = 0;
+            fontstyle = 0;
+            angle = 0;
+            justify = LEFT;
+            pen = -1;
+        };
+
+        text _tmp_17
+        {
+            name = "Текст_2";
+            x1 = 4;
+            y1 = 3;
+            x2 = 4;
+            y2 = 3;
+            string = "<AssemblyPos>";
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 1;
+            fontratio = 1;
+            fontslant = 0;
+            fontstyle = 0;
+            angle = 0;
+            justify = LEFT;
+            pen = -1;
+        };
+
+        text _tmp_18
+        {
+            name = "Текст_3";
+            x1 = 58;
+            y1 = 3;
+            x2 = 58;
+            y2 = 3;
+            string = "</AssemblyPos>";
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 1;
+            fontratio = 1;
+            fontslant = 0;
+            fontstyle = 0;
+            angle = 0;
+            justify = LEFT;
+            pen = -1;
+        };
+
+        valuefield _tmp_20
+        {
+            name = "ValueField";
+            location = (18, 3);
+            formula = "GetValue(\"ASSEMBLY_POS\")";
+            maxnumoflines = 1;
+            datatype = STRING;
+            class = "";
+            cacheable = TRUE;
+            formatzeroasempty = FALSE;
+            justify = LEFT;
+            visibility = TRUE;
+            angle = 0;
+            length = 30;
+            decimals = 0;
+            sortdirection = ASCENDING;
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 0.8;
+            fontratio = 0.75;
+            fontstyle = 0;
+            fontslant = 0;
+            pen = 0;
+            oncombine = NONE;
+            aligncontenttotop = FALSE;
+        };
+
+        text _tmp_4
+        {
+            name = "Текст_4";
+            x1 = 4;
+            y1 = 2;
+            x2 = 4;
+            y2 = 2;
+            string = "<AssemblyGUID>";
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 1;
+            fontratio = 1;
+            fontslant = 0;
+            fontstyle = 0;
+            angle = 0;
+            justify = LEFT;
+            pen = -1;
+        };
+
+        valuefield _tmp_6
+        {
+            name = "GUID_field";
+            location = (18, 2);
+            formula = "GetValue(\"GUID\")";
+            maxnumoflines = 1;
+            datatype = STRING;
+            class = "";
+            cacheable = TRUE;
+            formatzeroasempty = FALSE;
+            justify = LEFT;
+            visibility = TRUE;
+            angle = 0;
+            length = 40;
+            decimals = 0;
+            sortdirection = ASCENDING;
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 0.8;
+            fontratio = 0.75;
+            fontstyle = 0;
+            fontslant = 0;
+            pen = 0;
+            oncombine = NONE;
+            aligncontenttotop = FALSE;
+        };
+
+        text _tmp_8
+        {
+            name = "Текст_5";
+            x1 = 58;
+            y1 = 2;
+            x2 = 58;
+            y2 = 2;
+            string = "</AssemblyGUID>";
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 1;
+            fontratio = 1;
+            fontslant = 0;
+            fontstyle = 0;
+            angle = 0;
+            justify = LEFT;
+            pen = -1;
+        };
+
+        text _tmp_1
+        {
+            name = "Текст_6";
+            x1 = 4;
+            y1 = 1;
+            x2 = 4;
+            y2 = 1;
+            string = "<MainpartGUID>";
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 1;
+            fontratio = 1;
+            fontslant = 0;
+            fontstyle = 0;
+            angle = 0;
+            justify = LEFT;
+            pen = -1;
+        };
+
+        text _tmp_3
+        {
+            name = "Текст_7";
+            x1 = 58;
+            y1 = 1;
+            x2 = 58;
+            y2 = 1;
+            string = "</MainpartGUID>";
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 1;
+            fontratio = 1;
+            fontslant = 0;
+            fontstyle = 0;
+            angle = 0;
+            justify = LEFT;
+            pen = -1;
+        };
+
+        valuefield _tmp_4
+        {
+            name = "MAINPART.GUID_field";
+            location = (18, 1);
+            formula = "GetValue(\"MAINPART.GUID\")";
+            maxnumoflines = 1;
+            datatype = STRING;
+            class = "";
+            cacheable = TRUE;
+            formatzeroasempty = FALSE;
+            justify = LEFT;
+            visibility = TRUE;
+            angle = 0;
+            length = 40;
+            decimals = 0;
+            sortdirection = NONE;
+            fontname = "Arial Narrow";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 5;
+            fontratio = 1.5;
+            fontstyle = 0;
+            fontslant = 0;
+            pen = -1;
+            oncombine = NONE;
+            aligncontenttotop = FALSE;
+        };
+    };
+
+    footer 
+    {
+        name = "FOOTER";
+        height = 1;
+
+        text _tmp_0
+        {
+            name = "</Заказ>";
+            x1 = 0;
+            y1 = 0;
+            x2 = 0;
+            y2 = 0;
+            string = "</Assemblies>";
+            fontname = "Courier New";
+            fontcolor = 153;
+            fonttype = 2;
+            fontsize = 1;
+            fontratio = 1;
+            fontslant = 0;
+            fontstyle = 0;
+            angle = 0;
+            justify = LEFT;
+            pen = -1;
+        };
+    };
+};

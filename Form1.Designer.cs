@@ -28,13 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.BTN_Start = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // BTN_Start
+            // 
+            this.BTN_Start.Location = new System.Drawing.Point(118, 53);
+            this.BTN_Start.Name = "BTN_Start";
+            this.BTN_Start.Size = new System.Drawing.Size(75, 23);
+            this.BTN_Start.TabIndex = 0;
+            this.BTN_Start.Text = "Start";
+            this.BTN_Start.UseVisualStyleBackColor = true;
+            this.BTN_Start.Click += new System.EventHandler(this.BTN_Start_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 210);
+            this.ClientSize = new System.Drawing.Size(330, 145);
+            this.Controls.Add(this.BTN_Start);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -42,6 +54,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button BTN_Start;
     }
 }
 
