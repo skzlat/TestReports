@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,9 @@ namespace TestReports
 
         private void BTN_Start_Click(object sender, EventArgs e)
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             string repPath = "";
             TeklaStructuresSettings.GetAdvancedOption("XS_TEMPLATE_DIRECTORY", ref repPath);
 
@@ -57,6 +61,48 @@ namespace TestReports
 
             var assemblyDataSet = Reports.ReportDataSet(_model, repName, false, "", "", "");
             var assemblies = assemblyDataSet.Tables["Assembly"];
+
+            stopwatch.Stop();
+            label_reports.Text = stopwatch.Elapsed.ToString();
+        }
+
+        private void BTN_Start_ModelObjects_Click(object sender, EventArgs e)
+        {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
+            DataTable assemblies = new DataTable();
+            DataColumn AssemblyPos = new DataColumn("AssemblyPos", Type.GetType("System.String"));
+            DataColumn AssemblyGUID = new DataColumn("AssemblyGUID", Type.GetType("System.String"));
+            DataColumn MainpartGUID = new DataColumn("MainpartGUID", Type.GetType("System.String"));
+            assemblies.Columns.Add(AssemblyPos);
+            assemblies.Columns.Add(AssemblyGUID);
+            assemblies.Columns.Add(MainpartGUID);
+
+            var MUIO = new MUI.ModelObjectSelector();
+            var ME = MUIO.GetSelectedObjects();
+            ME.SelectInstances = false;
+            while (ME.MoveNext())
+            {
+                var assembly = (Assembly)ME.Current;
+                if (assembly == null)
+                    continue;
+
+                string ASSEMBLYPOS = "";
+                string GUID = "";
+                string MAINPARTGUID = "";
+
+                assembly.GetReportProperty("ASSEMBLY_POS", ref ASSEMBLYPOS);
+                assembly.GetReportProperty("GUID", ref GUID);
+                assembly.GetReportProperty("MAINPART.GUID", ref MAINPARTGUID);
+
+                DataRow dataRow = assemblies.NewRow();
+                dataRow.ItemArray = new string[] { ASSEMBLYPOS, GUID, MAINPARTGUID };
+                assemblies.Rows.Add(dataRow);
+            }
+
+            stopwatch.Stop();
+            label_modelobjects.Text = stopwatch.Elapsed.ToString();
         }
     }
     static class Reports
@@ -76,7 +122,7 @@ namespace TestReports
             if (fromAll)
                 if (!TSMO.Operation.CreateReportFromAll(reportName, reportFile, title1, title2, title3))
                     MessageBox.Show("Ошибка при создании отчёта!");
-            else
+                else
                 if (!TSMO.Operation.CreateReportFromSelected(reportName, reportFile, title1, title2, title3))
                     MessageBox.Show("Ошибка при создании отчёта!");
 
